@@ -146,7 +146,7 @@ class ONNXExporterTester(unittest.TestCase):
                 test_ouputs = model(*test_inputs)
                 if isinstance(test_ouputs, torch.Tensor):
                     test_ouputs = (test_ouputs,)
-            self.ort_validate(onnx_io=onnx_io, inputs=test_inputs, outputs=test_ouputs, tolerate_small_mismatch=tolerate_small_mismatch)
+            self.ort_validate(self=self, onnx_io=onnx_io, inputs=test_inputs, outputs=test_ouputs, tolerate_small_mismatch=tolerate_small_mismatch)
 
     def ort_validate(self, onnx_io, inputs, outputs, tolerate_small_mismatch=False):
 
